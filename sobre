@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Controle de Frequência</title>
+</head>
+
+<style>
+body{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+img{
+width: 200px;
+height: 200px;
+margin-top: -35px;
+}
+.cabeçalho{
+text-align: right;
+margin-right: 30px;
+margin-top: -150px;
+}
+section{
+margin-top: 50px;
+margin-left: 30px;
+margin-right: 20px;
+}
+hr{
+height: 5px;
+background-color: rgba(247, 0, 41, 0.616);
+}
+h1{
+text-align: center;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+.container{
+background-color: rgba(128, 128, 128, 0.473);
+color: #000;
+text-align: justify;
+padding: 30px;
+width: 600px;
+height: 54 0px;
+margin: auto;
+border-radius: 30px;
+font-size: 18px;
+line-height: 26px;
+}
+nav{
+text-align: center;
+font-size: 22px;
+margin-top: 10px;
+}
+a{
+padding: 11px;
+text-decoration: none;
+color: #f700299d;
+}
+a:hover{
+background-color: #f700299d;
+color: #fff;
+border-radius: 50px;
+}
+.sobre{
+float: left;
+margin-left: 30px;
+margin-bottom: 20px;
+}
+.imagem2{
+float: right;
+margin-right: 140px;
+margin-top: 180px;
+}
+#ctt{
+text-align: left;
+margin-left: 200px;
+margin-bottom: 5px;
+}
+</style>
+
+<body>
+<header>
+<div class="imagem">
+<img src="img/logo.png" alt="logo">
+</div>
+<div class="cabeçalho">
+<h3>Curso: Técnico em Automação Industrial</h3>
+<h3>Professor: Charles Schlüter</h3>
+<p id="ctt">Contato: infogrupoPOMA@gmail.com</p>
+</div>
+</header>
+<hr>
+<nav>
+<a href="main.html">Início</a>
+<a href="sobre.html">Como funciona?</a>
+</nav>
+<main>
+<h1>Como usar o sistema?</h1>
+<div class="sobre">
+<div class="container">
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, autem magnam! Accusantium, possimus tempore fugit ipsam voluptatem odit minima nemo doloremque deserunt dolor voluptatibus saepe ut delectus ratione quibusdam tenetur! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est commodi totam, quasi culpa molestiae maxime quidem pariatur ab repellendus soluta, ducimus, consequatur amet. Autem magni nostrum saepe, laboriosam rerum blanditiis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto officiis quasi explicabo vitae? Praesentium neque molestiae unde tenetur aliquid, ducimus, voluptatem illo rerum debitis esse iure excepturi, vero distinctio libero. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, error. Labore sunt ullam debitis rerum unde corrupti laborum sed. Magnam voluptatem eaque quam dolor praesentium voluptates possimus ullam consequuntur harum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et quam reiciendis voluptatum aut suscipit odit perferendis repudiandae! Sed quod perferendis alias placeat, dignissimos culpa, eos ad voluptatem deleniti, et tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa nihil voluptates accusantium commodi facere blanditiis, impedit deleniti tempore. Provident soluta debitis error consectetur ipsam sed pariatur minima nulla nemo eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, totam omnis labore molestiae necessitatibus voluptas quis delectus obcaecati inventore aspernatur maiores fugit dolores culpa distinctio optio facere est ipsum ea. lo
+</div>
+</div>
+<div class="imagem2">
+<img src="img/leitor.jpg" alt="leitor">
+</div>
+</main>
+
+</body>
+</html>
