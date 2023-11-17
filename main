@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Controle de Frequência</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Controle de Frequência</title>
+</head>
+<style>
+
+body{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img{
+width: 200px;
+height: 200px;
+margin-top: -35px;
+}
+
+.cabeçalho{
+text-align: right;
+margin-right: 30px;
+margin-top: -150px;
+}
+
+section{
+margin-top: 50px;
+margin-left: 30px;
+margin-right: 20px;
+}
+
+th{
+padding: 30px;
+border-right: 2px solid black; /* Adiciona uma linha vertical à direita dos cabeçalhos */
+text-align: center;
+white-space: nowrap;
+}
+
+input[type="text"] {
+width: 150px;
+text-align: center;
+}
+
+hr{
+height: 5px;
+background-color: #f700299d;
+}
+
+#ultima{
+margin-bottom: 30px;
+}
+
+.nome{
+border-right: none;
+
+}
+
+.lock-btn {
+padding: 5px 10px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+margin-top: 5px;
+}
+
+nav{
+text-align: center;
+font-size: 22px;
+margin-top: 10px;
+}
+
+a{
+padding: 11px;
+text-decoration: none;
+color: #f700299d;
+}
+
+a:hover{
+background-color: #f700299d;
+color: #fff;
+border-radius: 50px;
+}
+
+#ctt{
+text-align: left;
+margin-left: 200px;
+margin-bottom: 5px;
+}
+#limparRegistrosBtn{
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-left: 60px;
+    margin-bottom: 40px;
+    float: left;
+    cursor: pointer;
+}
+
+#limparRegistrosBtn:hover {
+    background-color: #fff;
+    color: #4CAF50;
+    border: 1px solid #4CAF50; /* Adiciona uma borda verde quando o botão é hover */
+}
+
+</style>
+<body>
+<header>
+<div class="imagem">
+    <img src="img/logo.png" alt="logo">
+</div>
+<div class="cabeçalho">
+    <h3>Curso: Técnico em Automação Industrial</h3>
+    <h3>Professor: Charles Schlüter</h3>
+    <p id="ctt">Contato: infogrupoPOMA@gmail.com</p>
+</div>
+</header>
+<hr>
+<nav>
+    <a href="main.html">Início</a>
+    <a href="sobre.html">Como funciona?</a>
+</nav>
+<div>
+    <button id="limparRegistrosBtn">Limpar</button>
+</div>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula1"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula1')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche1"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche1')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche1"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche1')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula1"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula1')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula2"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula2')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche2"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche2')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche2"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche2')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula2"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula2')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula3"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula3')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche3"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche3')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche3"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche3')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula3"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula3')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula4"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula4')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche4"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche4')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche4"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche4')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula4"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula4')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula5"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula5')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche5"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche5')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche5"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche5')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula5"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula5')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula6"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula6')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche6"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche6')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche6"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche6')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula6"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula6')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula7"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula7')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche7"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche7')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche7"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche7')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula7"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula7')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula8"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula8')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche8"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche8')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche8"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche8')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula8"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula8')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula9"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula9')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche9"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche9')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche9"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche9')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula9"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula9')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula10"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula10')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche10"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche10')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche10"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche10')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula10"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula10')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula11"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula11')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche11"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche11')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche11"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche11')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula1"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula11')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula12"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula12')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche12"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche12')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche12"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche12')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula12"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula12')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula13"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula13')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche13"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche13')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche13"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche13')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula13"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula13')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula14"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula14')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche14"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche14')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche14"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche14')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula14"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula14')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        <section>
+    <table>
+<tr>
+<th id="currentDate"></th>
+<th>
+Entrada Aula <br>
+    <input type="text" id="entradaAula15"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('entradaAula15')">Travar</button>
+</th>
+<th>
+Saída Lanche <br>
+    <input type="text" id="saidaLanche15"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaLanche15')">Travar</button>
+</th>
+<th>
+Volta Lanche <br>
+    <input type="text" id="voltaLanche15"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('voltaLanche15')">Travar</button>
+</th>
+<th>
+Saída Aula <br>
+    <input type="text" id="saidaAula15"> <br>
+    <button class="lock-btn" onclick="lockAndSaveTime('saidaAula15')">Travar</button>
+</th>
+<th class="nome">nome aluno</th>
+</tr>
+    </table>
+        </section>
+        
+<script>
+   // Função para obter o horário atual no formato HH:mm
+function getCurrentTime() {
+  var now = new Date();
+  var hours = now.getHours().toString().padStart(2, '0');
+  var minutes = now.getMinutes().toString().padStart(2, '0');
+  return hours + ":" + minutes;
+}
+
+// Função para travar e gravar o horário
+function lockAndSaveTime(inputId) {
+  var inputElement = document.getElementById(inputId);
+
+  if (!inputElement.readOnly) {
+    inputElement.readOnly = true;
+    inputElement.style.backgroundColor = "#dddddd"; // Cor de fundo alterada para indicar que está travado
+    inputElement.value = getCurrentTime();
+
+    // Armazenar o valor no localStorage
+    localStorage.setItem(inputId, inputElement.value);
+  }
+}
+
+// Função para obter a data atual no formato DD - MM - AA
+function getCurrentDate() {
+  var now = new Date();
+  var day = now.getDate().toString().padStart(2, '0');
+  var month = (now.getMonth() + 1).toString().padStart(2, '0');
+  var year = now.getFullYear().toString().substring(2);
+  return day + " - " + month + " - " + year;
+}
+
+// Função para carregar os horários gravados ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+  // Iterar sobre todas as linhas da tabela
+  var rows = document.querySelectorAll('table tr');
+  rows.forEach(function (row, index) {
+
+    // Obter o elemento da célula de data na linha
+    var dateCell = row.querySelector('th#currentDate');
+
+    // Preencher dinamicamente a data na célula
+    dateCell.textContent = getCurrentDate();
+
+    // Iterar sobre todos os inputs na linha
+    var inputs = row.querySelectorAll('input[type="text"]');
+    inputs.forEach(function (inputElement) {
+      var storedTime = localStorage.getItem(inputElement.id);
+      if (storedTime) {
+        inputElement.value = storedTime;
+        inputElement.readOnly = true;
+        inputElement.style.backgroundColor = "#dddddd";
+      }
+    });
+  });
+});
+
+// Função para limpar todos os registros
+function limparRegistros() {
+  // Iterar sobre todos os inputs
+  var inputs = document.querySelectorAll('input[type="text"]');
+  inputs.forEach(function (inputElement) {
+    // Limpar valor, readOnly e cor de fundo
+    inputElement.value = "";
+    inputElement.readOnly = false;
+    inputElement.style.backgroundColor = "";
+
+    // Remover do localStorage
+    localStorage.removeItem(inputElement.id);
+  });
+}
+
+// Associar a função ao botão
+document.getElementById('limparRegistrosBtn').addEventListener('click', limparRegistros);
+</script>   
+</body>
+</html>
